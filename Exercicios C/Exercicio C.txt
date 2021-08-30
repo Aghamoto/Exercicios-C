@@ -1,0 +1,206 @@
+Exercicio 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) { 
+
+int i, j, temp, x[10];
+
+for (i = 0; i<10; i++)
+{
+printf("Digite um numero:");
+scanf("%d",&x[i]);
+}
+
+for (i=0;i<10; i++)
+for(j=i+1;j<10;j++)
+{
+if (x[i]>x[j])
+{
+temp=x[i];
+x[i]=x[j];
+x[j]=temp;
+}
+}
+
+printf("Vetor em ordem crescente: \n");
+for(i=0;i<10;i++)
+printf(" %d",x[i]); 
+
+system("pause");
+return 0;
+}
+--------------------------------------------------------------------------------------------
+Exercicio 2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+
+int g15, g16_30, g31_45, g46_60, g60;   
+float p15, p60;    
+int idade;    
+int i;    
+g15 = g16_30 = g31_45 = g46_60 = g60 = 0;    
+for(i = 0; i < 15; i++){        
+printf("Udade %d: ", i+1);       
+ scanf("%d", &idade);        
+if(idade <= 15){            
+g15++;        
+}        
+else if(idade >= 16 && idade <=30){            
+g16_30++;      
+  }        
+else if(idade >= 31 && idade <= 45){            
+g31_45++;       
+ }       
+ else if(idade >= 46 && idade <= 60){           
+ g46_60++;       
+ }        
+else{           
+ g60++;       
+ }    
+}   
+ printf("\n Idades:");    
+printf("\nAté 15 anos: %d pessoas", g15);   
+ printf("\nDe 16 a 30 anos: %d pessoas", g16_30);    
+printf("\nDe 31 a 45 anos: %d pessoas", g31_45);    
+printf("\nDe 46 a 60 anos: %d pessoas", g46_60);    
+printf("\nAcima de 60 anos: %d pessoas", g60);   
+ printf("\n\nPorcentagem de menores de 15 anos: %.2f%%", 100 * g15 / 15.);   
+ printf("\nPorcentagem de maiores de 60 anos: %.2f%%\n", 100 * g60 / 15.);   
+ return 0;
+ }
+
+--------------------------------------------------------------------------------------------
+
+Exercicio 3
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) { 
+int codigo=0, quantidade=0; 
+float calculo, total=0; 
+
+printf("CODIGO 	DESCRICAO 		PRECO \n"); 
+printf("100 	Cachorro-Quente 	2,10 \n"); 
+printf("101 	Bauru			2,50 \n"); 
+printf("102 	Americano		3,50 \n"); 
+printf("103 	CheeseBurguer		3,00 \n"); 
+printf("104 	CheeseSalada 		4,00 \n"); 
+printf("105 	Refrigerante 		3,00 \n \n"); 
+
+printf("Digite 0 para fechar a conta. \n \n"); 
+
+printf("Entre com o codigo: "); 
+scanf("%d",&codigo); 
+
+while(codigo > 0){ 
+printf("Digite a quantidade: "); 
+scanf("%d",&quantidade); 
+calculo = 0; 
+
+switch(codigo){ 
+case 100: calculo = 2.10 * quantidade; 
+break; 
+case 101: calculo = 2.50 * quantidade; 
+break; 
+case 102: calculo = 3.50 * quantidade; 
+break; 
+case 103: calculo = 3.00 * quantidade; 
+break; 
+case 104: calculo = 4.00 * quantidade; 
+break; 
+case 105: calculo = 3.00 * quantidade; 
+break; 
+default: printf("\nInforme um dos codigos da lista."); 
+} 
+
+total += calculo; 
+printf("preco: %.2f", calculo); 
+printf("\n Entre com o codigo: "); 
+scanf("%d", &codigo); 
+} 
+
+printf("Total a pagar: %.2f", total); 
+	return 0;
+}
+
+--------------------------------------------------------------------------------------------
+
+Exercicio 4
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) { 
+
+	int v=7, c1=0, c2=0, c3=0, c4=0, vn=0, vb=0;
+	printf("Bem vindo vamos votar!");
+	
+	while(v!=0)
+	{
+		printf("\n\n 1-Candidato1\n 2-Candidato2\n 3-Candidato3\n 4-Candidato4\n 5-Voto Nulo\n 6-Voto em Branco");
+		printf("\nDigite o numero e de o ENTER: ");
+		scanf("%i" ,&v);
+		
+		switch(v)
+		{
+			case 0:
+			printf("\nVOTACAO ENCERRADA!");
+			break;
+			
+			case 1:
+			c1=c1+1;
+			printf("Candidato1 - VOTO REGISTRADO! OBRIGADO");
+			break;
+			
+			case 2:
+			c2=c2+1;
+			printf("Candidato2 - VOTO REGISTRADO! OBRIGADO");
+			break;
+			
+			case 3:
+			c3=c3+1;
+			printf("Candidato3 - VOTO REGISTRADO! OBRIGADO");
+			break;
+			
+			case 4:
+			c4=c4+1;
+			printf("Candidato4 - VOTO REGISTRADO! OBRIGADO");
+			break;
+			
+			case 5:
+			vn=vn+1;
+			printf("Voto Nulo - VOTO REGISTRADO! OBRIGADO");
+			break;
+			
+			case 6:
+			vb=vb+1;
+			printf("Voto em Branco - VOTO REGISTRADO! OBRIGADO");
+			break;
+			
+			default:
+				printf("Opcao Invalida!");
+				break;
+			
+		}
+	}
+		printf("RESULTADO:\n Candidato1\t %i\n Candidato2\t %i\n Candidato3\t %i\n Candidato4\t %i\n Voto Nulo\t %i\n Votos em Brancos %i\n",c1,c2,c3,c4,vn,vb);
+	 
+getchar();
+printf("\n\n");
+system("pause");
+return(0);
+}
